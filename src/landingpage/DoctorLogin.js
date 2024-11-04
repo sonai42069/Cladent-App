@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { db } from "../config/soumiFirebaseConfig"; // Firebase config
+import { db } from "../config/FirebaseConfig"; // Firebase config
 import bcrypt from 'bcryptjs'; // Import bcryptjs
 import './login.css';
 import Loginnavbar from './loginnavbar';

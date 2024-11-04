@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db, storage } from "../config/soumiFirebaseConfig"; // Import Firestore and Storage instances
+import { db, storage } from "../config/FirebaseConfig"; // Import Firestore and Storage instances
 import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore"; // Firestore imports
 import { getDownloadURL, ref, deleteObject } from "firebase/storage"; // Firebase Storage imports
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation

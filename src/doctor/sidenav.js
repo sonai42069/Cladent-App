@@ -36,9 +36,9 @@ const SideNavbar = () => {
         {isManageAppointment && (
           <div className="options">
             <Link to="/doctorlogin/dailyappointments">VIEW</Link>
-            <Link to="/doctorlogin/profile">Reschedule</Link>
-            <Link to="/doctorlogin/booking">Cancel</Link>
-            <Link to="/doctorlogin/payment">Book</Link>
+            <Link to="/doctorlogin/dashboard">Reschedule</Link>
+            <Link to="/doctorlogin/dashboard">Cancel</Link>
+            <Link to="/doctorlogin/dashboard">Book</Link>
             
           </div>
         )}
@@ -49,11 +49,11 @@ const SideNavbar = () => {
         {/* Show the consultant options based on isConsultantVisible state */}
         {isPatientVisit && (
           <div className="options">
-            <Link to="/doctorlogin/consultantlist">View Patient</Link>
-            <Link to="/doctorlogin/profile">Edit Patient History</Link>
-            <Link to="/doctorlogin/booking">Add Prescription</Link>
-            <Link to="/doctorlogin/payment">Payment</Link>
-            <Link to="/doctorlogin/history">Print Fees & Prescription</Link>
+            <Link to="/doctorlogin/dashboard">View Patient</Link>
+            <Link to="/doctorlogin/dashboard">Edit Patient History</Link>
+            <Link to="/doctorlogin/dashboard">Add Prescription</Link>
+            <Link to="/doctorlogin/dashboard">Payment</Link>
+            <Link to="/doctorlogin/dashboard">Print Fees & Prescription</Link>
           </div>
         )}
         
@@ -79,6 +79,7 @@ const SideNavbar = () => {
         </a>
         {isLabVisible && (
           <div className="options">
+              <Link to="/doctorlogin/dashboard">View Reports</Link>
               <Link to="/doctorlogin/patientlab">Patient Lab Records</Link>
               <Link to="/doctorlogin/labUpload">Invoice Upload</Link>
               <Link to="/doctorlogin/labUploadHistory">Payment History</Link>

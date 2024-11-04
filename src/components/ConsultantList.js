@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ConsultantCard from './ConsultantCard';
 import styled from 'styled-components';
-import { db } from '../config/soumiFirebaseConfig'; // Import your Firebase config
+import { db } from '../config/FirebaseConfig'; // Import your Firebase config
 import { collection, getDocs } from 'firebase/firestore';
 
 // Define styled components for the list

@@ -54,14 +54,16 @@ function App() {
             !isAuthenticated ? (
               <DoctorLogin onLogin={handleLogin} />
             ) : (
-              <Navigate to="/doctorlogin/dashboard" /> // Redirect immediately to doctor dashboard on successful login
+              <Navigate to="/doctorlogin/dailyappointments" /> // Redirect immediately to doctor dashboard on successful login
             )
           }
         />
         {isAuthenticated ? (
           <Route path="/doctorlogin" element={<SideNavbar />}>
-            <Route path="dashboard" element={<Dashboard />} />
+            
+            
             <Route path="dailyappointments" element={<Dailyappointments />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="diary" element={<PatientDiary />} />
             <Route path="consultantlist" element={<Consultantlist />} />
             <Route path="profile" element={<Profile />} />

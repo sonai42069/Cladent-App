@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { db, storage } from "../config/soumiFirebaseConfig"; // Import Firestore and Storage instances
+import { db, storage } from "../config/FirebaseConfig"; // Import Firestore and Storage instances
 import { collection, addDoc } from "firebase/firestore"; // Firestore imports
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Firebase Storage imports
 import "./patientlabrecords.css";
@@ -32,7 +32,7 @@ function Patientlabrecords() {
     
     try {
       // Upload image to Firebase Storage
-      const imageRef = ref(storage, `patentImages/${Date.now()}_${image.name}`);
+      const imageRef = ref(storage, `patentLabReports/${Date.now()}_${image.name}`);
       await uploadBytes(imageRef, image);
       const imageUrl = await getDownloadURL(imageRef); // Get image URL
 
@@ -42,7 +42,7 @@ function Patientlabrecords() {
       const formattedTime = currentDate.toLocaleTimeString(); // Format time (e.g., "3:30:00 PM")
   
       // Save data to Firestore
-      const docRef = await addDoc(collection(db, "patents"), {
+      const docRef = await addDoc(collection(db, "patentLabReports"), {
         patentId: patentId,
         pictureDetails: pictureDetails,
         pictureName: pictureName,

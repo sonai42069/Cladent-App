@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../config/soumiFirebaseConfig"; // Import Firestore instance
+import { db } from "../config/FirebaseConfig"; // Import Firestore instance
 import { collection, query, where, getDocs, updateDoc, setDoc, doc } from "firebase/firestore"; // Firestore imports
 import bcrypt from "bcryptjs"; // Import bcryptjs for hashing passwords
 import "./patientlabrecords.css";
