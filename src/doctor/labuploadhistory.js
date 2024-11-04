@@ -108,9 +108,9 @@ function LaboratoryUploadHistory() {
                             {invoices.map((invoice) => (
                                 <tr key={invoice.id}>
                                     <td>{invoice.LaboratoryName}</td>
-                                    <td>${invoice.TotalAmount}</td>
-                                    <td>${invoice.AmountPaid}</td>
-                                    <td>${invoice.DueAmount}</td>
+                                    <td>{invoice.TotalAmount}</td>
+                                    <td>{invoice.AmountPaid}</td>
+                                    <td>{invoice.DueAmount}</td>
                                     <td>{invoice.uploadDate}</td>
                                     <td>{invoice.uploadTime}</td>
                                     <td className="labuploadhistory-actionbutton">

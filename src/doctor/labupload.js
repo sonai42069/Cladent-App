@@ -144,7 +144,7 @@ function LabInvoiceUpload() {
     return (
         <div className="App-con">
             <form className="labupload-body-container" onSubmit={handleSubmit}>
-                <h1>{isEditing ? "Edit Invoice" : "Monthly Invoice Upload"}</h1>
+                <h1>{isEditing ? "Edit Invoice" : "Upload  Monthly Invoice "}</h1>
                 <div>
                     <label>Laboratory Name</label><br />
                     <select

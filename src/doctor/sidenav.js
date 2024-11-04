@@ -4,11 +4,19 @@ import { Link, Outlet } from 'react-router-dom';
 
 const SideNavbar = () => {
     const [isConsultantVisible, setIsConsultantVisible] = useState(false);  // Control consultant dropdown visibility
+    const [isManageAppointment, setIsManageAppointment] = useState(false);
+    const [isPatientVisit, setIsPatientVisit] = useState(false);
     const [isLabVisible, setIsLabVisible] = useState(false);  // Control lab dropdown visibility
     const [isProfileSettings, setIsProfileSettings] = useState(false);  // Control lab dropdown visibility
   // Toggle Consultant div visibility
   const toggleConsultantVisibility = () => {
     setIsConsultantVisible(prevState => !prevState);  // Toggle visibility state
+  };
+  const toggleManageAppointment = () => {
+    setIsManageAppointment(prevState => !prevState);  // Toggle visibility state
+  };
+  const togglePatientVisit = () => {
+    setIsPatientVisit(prevState => !prevState);  // Toggle visibility state
   };
   const toggleLabVisibility = () => {
     setIsLabVisible(prevState => !prevState);  // Toggle visibility state
@@ -20,8 +28,35 @@ const SideNavbar = () => {
   return (
     <div className="side-navbar-container">
       <div className="side-navbar">
-        <Link to="/doctorlogin/dashboard">Dashboard</Link>
-        <Link to="/doctorlogin/dailyappointments">Daily Appointments</Link>
+      <a onClick={toggleManageAppointment}>
+          Manage Appointment
+        </a>
+
+        {/* Show the consultant options based on isConsultantVisible state */}
+        {isManageAppointment && (
+          <div className="options">
+            <Link to="/doctorlogin/dailyappointments">VIEW</Link>
+            <Link to="/doctorlogin/profile">Reschedule</Link>
+            <Link to="/doctorlogin/booking">Cancel</Link>
+            <Link to="/doctorlogin/payment">Book</Link>
+            
+          </div>
+        )}
+              <a onClick={togglePatientVisit}>
+          Patient Visit
+        </a>
+
+        {/* Show the consultant options based on isConsultantVisible state */}
+        {isPatientVisit && (
+          <div className="options">
+            <Link to="/doctorlogin/consultantlist">View Patient</Link>
+            <Link to="/doctorlogin/profile">Edit Patient History</Link>
+            <Link to="/doctorlogin/booking">Add Prescription</Link>
+            <Link to="/doctorlogin/payment">Payment</Link>
+            <Link to="/doctorlogin/history">Print Fees & Prescription</Link>
+          </div>
+        )}
+        
         <Link to="/doctorlogin/diary">Daily Diary</Link>
 
         {/* Toggle Consultant dropdown */}
@@ -49,14 +84,14 @@ const SideNavbar = () => {
               <Link to="/doctorlogin/labUploadHistory">Payment History</Link>
           </div>
         )}
-        
+        <Link to="/doctorlogin/diary">Diary</Link>
         <Link to="/doctorlogin/approval">Approval</Link>
         <a onClick={toggleProfileSettings}>
           Settings
         </a>
         {isProfileSettings && (
           <div className="options">
-              <Link to="/doctorlogin/view&update profile">View / Update Profile</Link>
+              {/* <Link to="/doctorlogin/view&update profile">View / Update Profile</Link> */}
               <Link to="/doctorlogin/changepassword">Change Password</Link>
               
           </div>
